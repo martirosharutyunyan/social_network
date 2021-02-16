@@ -1,0 +1,1 @@
+{"version":3,"file":"DeleteUser.js","sourceRoot":"","sources":["../../src/routes/DeleteUser.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,gDAA0C;AAE7B,QAAA,UAAU,GAAG,CAAO,KAAa,EAAgB,EAAE;IAC5D,IAAI;QACA,MAAM,kBAAM,CAAC,MAAM,CAAC,KAAK,CAAC,CAAC;QAC3B,OAAO,cAAc,CAAC;KACzB;IAAC,OAAO,GAAG,EAAE;QACV,OAAO,GAAG,CAAA;KACb;AACL,CAAC,CAAA,CAAC"}
