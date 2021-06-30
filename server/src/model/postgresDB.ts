@@ -9,13 +9,13 @@ export const client = new Client({
     user:'postgres',
 })
 
-export const sequelize = new Sequelize(process.env.POSTGRESDBNAME,'postgres',process.env.POSTGRESDBPASSWORD,{
+export const sequelize = new Sequelize(process.env.POSTGRESDBNAME, 'postgres', process.env.POSTGRESDBPASSWORD, {
     host:'127.0.0.1',
     dialect:'postgres'
 })
 
 
-export const model = sequelize.define('users',{
+export const model = sequelize.define('users', {
     email:{
         type:DataTypes.STRING
     },

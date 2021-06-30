@@ -19,6 +19,9 @@ let Login: FC = () => {
         loginPassword:'hhs13516',
     });
     const [load, setload] = useState<boolean>(false);
+    useEffect(():void => {
+        console.log('ok')
+    }, [state.loginEmail]);
     const changeValue = (e:input):void => {
         setState({...state,[e.target.id]:e.target.value})
     }

@@ -11,9 +11,7 @@ import { connection } from "./Socket/Socket.io";
 const app = express();
 const port: number | string = process.env.PORT;
 const http = require('http').createServer(app);
-export const io:Socket = require('socket.io')(http,{
-    cors:{origin:"*"}
-});
+export const io:Socket = require('socket.io')(http, { cors: {origin: "*"}});
 
 sequelize.authenticate().then(res => console.log('connected to DB'), console.log)
 

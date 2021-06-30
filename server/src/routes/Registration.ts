@@ -5,7 +5,7 @@ import { UserDB } from "../sql/Sequelize";
 import { nodemailerMessageType } from "../types/types";
 
 export class Registration{
-    static async SaveUser({code, name, surname, verificationCode, email, password}: saveUserType): Promise<any> {
+    static async SaveUser({ code, name, surname, verificationCode, email, password }: saveUserType): Promise<any> {
         try {
             let checkCode = await bcrypt.compare(verificationCode, code)
             console.log(code,verificationCode)
