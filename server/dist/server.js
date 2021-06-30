@@ -26,6 +26,6 @@ app.use('/graphql', express_graphql_1.graphqlHTTP({
     schema: schema_1.schema,
     graphiql: true,
 }));
-exports.io.on('connection', Socket_io_1.iosocket);
+exports.io.on('connection', Socket_io_1.connection);
 http.listen(port, () => console.log(`server is runing on port ${port}`));
 //# sourceMappingURL=server.js.map

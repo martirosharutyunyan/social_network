@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.iosocket = void 0;
+exports.connection = void 0;
 const server_1 = require("./../server");
 let connections = [];
-exports.iosocket = (socket) => {
+exports.connection = (socket) => {
     try {
         const user = {
             // @ts-ignore

@@ -31,14 +31,14 @@ const query = new gObjectType({
     fields:()=>({
         getUsers:{
             type:new gList(user),
-            async resolve(parents,args){
+            async resolve(parents, args){
                 let data = await UserDB.getUsers()
                 return data
             }
         },
         checkUser:{
             type:gString,
-            args:{ email:{ type: gString },name:{ type: gString },surname:{ type: gString },password:{ type: gString }, },
+            args:{ email:{ type: gString }, name:{ type: gString }, surname:{ type: gString }, password:{ type: gString }, },
             async resolve(parents,args:checkUserType){
                 let data = await Registration.CheckUser(args)
                 return data
@@ -46,15 +46,15 @@ const query = new gObjectType({
         },
         Login:{
             type:gString,
-            args:{loginEmail:{ type: gString },loginPassword:{ type: gString },},
-            async resolve(parents,args:LoginType){
+            args:{loginEmail:{ type: gString }, loginPassword:{ type: gString }},
+            async resolve(parents, args:LoginType){
                 return await Login(args)
             }
         },
         ChangePassword:{
             type:gString,
-            args:{oldPassword:{ type: gString },email:{ type: gString },},
-            async resolve(parents,args:changePasswordType){
+            args:{oldPassword:{ type: gString }, email:{ type: gString }},
+            async resolve(parents, args:changePasswordType){
                 return await ChangePassword.ChangePassword(args)
             }
         },
@@ -81,14 +81,14 @@ const mutation = new gObjectType({
         ChangePasswordSave:{
             type:gString,
             args:{code:{ type: gString },verificationCode:{ type: gString },newPassword:{ type: gString },email:{ type: gString },},
-            async resolve(parents,args:SavePasswordType){
+            async resolve(parents, args:SavePasswordType){
                 return await ChangePassword.SavePassword(args)
             }
         },
         DeleteUser:{
             type:gString,
             args:{email:{ type: gString },},
-            async resolve(parents,args){
+            async resolve(parents, args){
                 return await DeleteUser(args.email)
             }
         }

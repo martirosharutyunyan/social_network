@@ -6,7 +6,7 @@ import { UserDB } from '../sql/Sequelize';
 
 export class ChangePassword {
 
-    static async ChangePassword({email,oldPassword}:changePasswordType):Promise<any> {
+    static async ChangePassword({ email, oldPassword}: changePasswordType): Promise<any> {
         try {
             const { password } = await UserDB.isThere(email);
             const checkPassword = await bcrypt.compare(oldPassword, password);
@@ -28,7 +28,7 @@ export class ChangePassword {
         }
     }
 
-    static async SavePassword({email,code,newPassword,password,verificationCode}:SavePasswordType):Promise<any> {
+    static async SavePassword({ email, code, newPassword, password, verificationCode}: SavePasswordType):Promise<any> {
         try {
             const checkCode = await bcrypt.compare(verificationCode, code);
             if (!checkCode) {

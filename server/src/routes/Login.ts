@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { UserDB } from "../sql/Sequelize";
 import { LoginType } from "../types/types";
-export const Login = async ({loginEmail,loginPassword}:LoginType): Promise<any> => {
+export const Login = async ({ loginEmail, loginPassword }: LoginType): Promise<any> => {
     try {
         const user = await UserDB.isThere(loginEmail);
         if (!user) {
